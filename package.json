@@ -1,21 +1,14 @@
 {
-  "name": "random-social-media",
+  "name": "lab-async-await",
   "version": "1.0.0",
-  "description": "Random Social Media Posts - Async JavaScript Lab",
+  "description": "Async/Await Lab - Random Social Media",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha --timeout 5000 --reporter mocha-junit-reporter test/*.js"
   },
   "devDependencies": {
-    "jest": "^29.0.0",
-    "jest-environment-jsdom": "^29.0.0"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "collectCoverage": true,
-    "coverageDirectory": "coverage",
-    "coverageReporters": ["text", "lcov"],
-    "testMatch": ["**/test/**/*.test.js"],
-    "verbose": true
+    "chai": "^4.3.7",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.0"
   }
 }
