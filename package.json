@@ -1,0 +1,21 @@
+{
+  "name": "random-social-media",
+  "version": "1.0.0",
+  "description": "Random Social Media Posts - Async JavaScript Lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov"],
+    "testMatch": ["**/test/**/*.test.js"],
+    "verbose": true
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Social Media Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        header {
+            background-color: #4267B2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #post-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post-card h2 {
+            color: #1a1a1a;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .post-card p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .post-card .post-id {
+            color: #666;
+            font-size: 12px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            padding: 20px;
+            background: #ffe6e6;
+            border-radius: 8px;
+        }
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #4267B2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #365899;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Random Social Media Posts</h1>
+        <p>Fetching posts from external API</p>
+    </header>
+
+    <div class="controls">
+        <button onclick="fetchAndDisplayPosts()">All Posts</button>
+        <button onclick="fetchRandomPosts(5)">5 Random</button>
+        <button onclick="fetchRandomPosts(10)">10 Random</button>
+    </div>
+
+    <main>
+        <div id="post-container">
+            <p>Loading posts...</p>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
