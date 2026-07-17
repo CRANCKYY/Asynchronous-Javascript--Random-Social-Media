@@ -6,15 +6,15 @@ async function fetchAndDisplayPosts() {
     try {
         const response = await fetch(API_URL);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+         throw new Error(`HTTP error! status: ${response.status}`);
         }
         const posts = await response.json();
         displayPosts(posts);
         return posts;
     } catch (error) {
-        console.error('Error fetching posts:', error);
-        displayError('Failed to load posts. Please try again later.');
-        throw error;
+     console.error('Error fetching posts:', error);
+     displayError('Failed to load posts. Please try again later.');
+     throw error;
     }
 }
 
@@ -22,28 +22,28 @@ async function fetchAndDisplayPosts() {
 function displayPosts(posts) {
     const container = document.getElementById('post-container');
     if (!container) {
-        console.error('Container not found');
-        return;
+      console.error('Container not found');
+      return;
     }
     container.innerHTML = '';
     
     posts.forEach(function(post) {
-        const postCard = document.createElement('div');
-        postCard.className = 'post-card';
+      const postCard = document.createElement('div');
+      postCard.className = 'post-card';
         
-        const postTitle = document.createElement('h2');
-        postTitle.textContent = post.title;
-        postCard.appendChild(postTitle);
+      const postTitle = document.createElement('h2');
+      postTitle.textContent = post.title;
+      postCard.appendChild(postTitle);
         
-        const postBody = document.createElement('p');
-        postBody.textContent = post.body;
-        postCard.appendChild(postBody);
+      const postBody = document.createElement('p');
+      postBody.textContent = post.body;
+      postCard.appendChild(postBody);
         
-        const postUserId = document.createElement('small');
-        postUserId.textContent = `User ID: ${post.userId} | Post ID: ${post.id}`;
-        postCard.appendChild(postUserId);
+      const postUserId = document.createElement('small');
+      postUserId.textContent = `User ID: ${post.userId} | Post ID: ${post.id}`;
+      postCard.appendChild(postUserId);
         
-        container.appendChild(postCard);
+      container.appendChild(postCard);
     });
 }
 
@@ -51,7 +51,7 @@ function displayPosts(posts) {
 function displayError(message) {
     const container = document.getElementById('post-container');
     if (container) {
-        container.innerHTML = `<p class="error">${message}</p>`;
+      container.innerHTML = `<p class="error">${message}</p>`;
     }
 }
 
@@ -59,8 +59,8 @@ function displayError(message) {
 function getRandomPosts(posts, count = 5) {
     const shuffled = [...posts];
     for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled.slice(0, count);
 }
@@ -77,9 +77,9 @@ async function fetchRandomPosts(count = 5) {
         displayPosts(randomPosts);
         return randomPosts;
     } catch (error) {
-        console.error('Error fetching random posts:', error);
-        displayError('Failed to load random posts.');
-        throw error;
+      console.error('Error fetching random posts:', error);
+      displayError('Failed to load random posts.');
+      throw error;
     }
 }
 
@@ -91,11 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Export for testing (using CommonJS for Node.js)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        fetchAndDisplayPosts,
-        fetchRandomPosts,
-        displayPosts,
-        getRandomPosts,
-        displayError,
-        API_URL
+     fetchAndDisplayPosts,
+     fetchRandomPosts,
+     displayPosts,
+     getRandomPosts,
+     displayError,
+     API_URL
     };
 }
